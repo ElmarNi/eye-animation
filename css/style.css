@@ -1,0 +1,103 @@
+.wrapper {
+  width: 500px;
+  height: 500px;
+  background: black;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.eye, .eye-in {
+  width: 250px;
+  height: 250px;
+  background: #ddd5c7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 100% 0%;
+  overflow: hidden;
+}
+
+.overlay, .overlay-2 {
+  transform: translate(-50%, -50%);
+  height: 150px;
+  width: 400px;
+  background: #000;
+  position: relative;
+  left: 50%;
+  top: 20%;
+  animation: top-to-bottom 2s infinite;
+}
+
+.overlay-2 {
+  top: 50%;
+  animation: bottom-to-top 2s infinite;
+}
+
+.main {
+  position: relative;
+  transform: rotate(-45deg);
+  height: 100%;
+}
+
+.eye-in {
+  transform: translate(-50%, -50%) rotate(0);
+  left: 50%;
+  height: 110px;
+  width: 130px;
+  background: white;
+  top: 50%;
+  border-radius: 50%;
+  z-index: 1;
+  animation: left-to-right 4s infinite;
+}
+.eye-in::before {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  height: 40%;
+  width: 40%;
+  background: green;
+  top: 50%;
+  border-radius: 50%;
+}
+
+@keyframes left-to-right {
+  0% {
+    left: 50%;
+  }
+  25% {
+    left: 25%;
+  }
+  75% {
+    left: 75%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes top-to-bottom {
+  0% {
+    top: 20%;
+  }
+  50% {
+    top: 37%;
+  }
+  100% {
+    top: 20%;
+  }
+}
+@keyframes bottom-to-top {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 32%;
+  }
+  100% {
+    top: 50%;
+  }
+}
